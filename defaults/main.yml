@@ -1,0 +1,4 @@
+---
+#papertrail_destination: "" # shouldn't be here
+papertrail_loglevel: "*.*"
+papertrail_enable_tcp: False
