@@ -5,4 +5,20 @@ $ActionSendStreamDriver gtls # use gtls netstream driver
 $ActionSendStreamDriverMode 1 # require TLS
 $ActionSendStreamDriverAuthMode x509/name # authenticate by hostname
 $ActionSendStreamDriverPermittedPeer *.papertrailapp.com
+
+{% if papertrail_enable_tcp %}
+$ActionResumeInterval 10
+$ActionQueueSize 100000
+$ActionQueueDiscardMark 97500
+$ActionQueueHighWaterMark 80000
+$ActionQueueType LinkedList
+$ActionQueueFileName papertrailqueue
+$ActionQueueCheckpointInterval 100
+$ActionQueueMaxDiskSpace 2g
+$ActionResumeRetryCount -1
+$ActionQueueSaveOnShutdown on
+$ActionQueueTimeoutEnqueue 10
+$ActionQueueDiscardSeverity 0
+{% endif %}
+
 {{ papertrail_loglevel }}                                         {{ '@@' if papertrail_enable_tcp else '@'}}{{ papertrail_destination }}
