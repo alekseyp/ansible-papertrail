@@ -1,5 +1,7 @@
 # {{ ansible_managed }}
 
+$EscapeControlCharactersOnReceive {{ papertrail_EscapeControlCharactersOnReceive }}
+
 {% if papertrail_enable_tls and papertrail_enable_tcp %}
 $DefaultNetstreamDriverCAFile /etc/papertrail-bundle.pem # trust these CAs
 $ActionSendStreamDriver gtls # use gtls netstream driver

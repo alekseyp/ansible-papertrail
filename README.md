@@ -18,6 +18,11 @@ Role Variables
 - `papertrail_enable_tls:`: Enable TLS. Only works with TCP. Default: True
 - `papertrail_loglevel`: loglevel. Default: *.*
 
+Rsyslog Defaults
+----------------
+
+- `papertrail_EscapeControlCharactersOnReceive`. Default (string): 'on'
+
 Example Playbook
 ----------------
 

@@ -3,3 +3,6 @@
 papertrail_loglevel: "*.*"
 papertrail_enable_tcp: False
 papertrail_enable_tls: True
+
+# Rsyslog Defaults 
+papertrail_EscapeControlCharactersOnReceive: 'on'
