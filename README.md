@@ -1,4 +1,4 @@
-ansible-papertrail
+Ansible Papertrail Role
 =========
 
 Role for configuring papertrail service. 
@@ -16,7 +16,7 @@ Role Variables
 - `papertrail_destination`: Papertrail Destination host:port i.e. logs1234.papertrailapp.com:1234
 - `papertrail_enable_tcp`: Enable TCP connection. Default: False
 - `papertrail_enable_tls:`: Enable TLS. Only works with TCP. Default: True
-- `papertrail_loglevel`: loglevel. Default: *.*
+- `papertrail_loglevel`: loglevel. Default: \*.\*
 
 Rsyslog Defaults
 ----------------
@@ -28,7 +28,7 @@ Example Playbook
 
     - hosts: servers
       roles:
-         - { role: aleksey.papertrail, papertrail_destination: logs1234.papertrailapp.com:1234}
+         - { role: alekseyp.papertrail, papertrail_destination: logs1234.papertrailapp.com:1234}
 
 
 TODO
