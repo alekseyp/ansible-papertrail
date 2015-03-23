@@ -1,8 +1,11 @@
 # {{ ansible_managed }}
 
+{% if papertrail_enable_tls and papertrail_enable_tcp %}
 $DefaultNetstreamDriverCAFile /etc/papertrail-bundle.pem # trust these CAs
 $ActionSendStreamDriver gtls # use gtls netstream driver
 $ActionSendStreamDriverMode 1 # require TLS
 $ActionSendStreamDriverAuthMode x509/name # authenticate by hostname
 $ActionSendStreamDriverPermittedPeer *.papertrailapp.com
+{% endif %}
+
 {{ papertrail_loglevel }}                                         {{ '@@' if papertrail_enable_tcp else '@'}}{{ papertrail_destination }}

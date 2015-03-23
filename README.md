@@ -15,6 +15,7 @@ Role Variables
 
 - `papertrail_destination`: Papertrail Destination host:port i.e. logs1234.papertrailapp.com:1234
 - `papertrail_enable_tcp`: Enable TCP connection. Default: False
+- `papertrail_enable_tls:`: Enable TLS. Only works with TCP. Default: True
 - `papertrail_loglevel`: loglevel. Default: *.*
 
 Example Playbook
@@ -29,6 +30,7 @@ TODO
 -------
 
 Add support for 
+
 - syslog
 - syslog-ng
 - other OSs
@@ -44,4 +46,5 @@ Author Information
 ------------------
 
 Aleksey Potaneyko
+
 Mediahub

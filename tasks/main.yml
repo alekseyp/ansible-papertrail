@@ -11,6 +11,7 @@
 
 - name: "Download papertrail root certificates"
   get_url: url=https://papertrailapp.com/tools/papertrail-bundle.pem dest=/etc/papertrail-bundle.pem owner=root group=root backup=no
+  when: papertrail_enable_tls
 
 - name: Configure papertrail rsyslogd config
   template: src=papertrail.conf.j2 dest=/etc/rsyslog.d/70-papertrail.conf owner=root group=root backup=no
