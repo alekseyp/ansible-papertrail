@@ -7,18 +7,19 @@ $ActionSendStreamDriverAuthMode x509/name # authenticate by hostname
 $ActionSendStreamDriverPermittedPeer *.papertrailapp.com
 
 {% if papertrail_enable_tcp %}
-$ActionResumeInterval 10
-$ActionQueueSize 100000
-$ActionQueueDiscardMark 97500
-$ActionQueueHighWaterMark 80000
-$ActionQueueType LinkedList
-$ActionQueueFileName papertrailqueue
-$ActionQueueCheckpointInterval 100
-$ActionQueueMaxDiskSpace 2g
-$ActionResumeRetryCount -1
-$ActionQueueSaveOnShutdown on
-$ActionQueueTimeoutEnqueue 10
-$ActionQueueDiscardSeverity 0
+$ActionResumeInterval {{ action_resume_interval }}
+$ActionQueueSize {{ action_queue_size }}
+$ActionQueueDiscardMark {{ action_queue_discard_mark }}
+$ActionQueueHighWaterMark {{ action_queue_high_water_mark }}
+$ActionQueueType {{ action_queue_type }}
+$ActionQueueFileName {{ action_queue_file_name }}
+$ActionQueueCheckpointInterval {{ action_queue_checkpoint_interval }}
+$ActionQueueMaxDiskSpace {{ action_queue_max_disk_space }}
+$ActionResumeRetryCount {{ action_resume_retry_count }}
+$ActionQueueSaveOnShutdown {{ action_queue_save_on_shutdown }}
+$ActionQueueTimeoutEnqueue {{ action_queue_timeout_enqueue }}
+$ActionQueueDiscardSeverity {{ action_queue_discard_severity }}
 {% endif %}
 
 {{ papertrail_loglevel }}                                         {{ '@@' if papertrail_enable_tcp else '@'}}{{ papertrail_destination }}
+
