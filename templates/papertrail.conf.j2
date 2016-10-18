@@ -9,5 +9,8 @@ $ActionSendStreamDriverMode 1 # require TLS
 $ActionSendStreamDriverAuthMode x509/name # authenticate by hostname
 $ActionSendStreamDriverPermittedPeer *.papertrailapp.com
 {% endif %}
+{% if papertrail_hostname %}
+$LocalHostName {{ papertrail_hostname }}
+{% endif %}
 
 {{ papertrail_loglevel }}                                         {{ '@@' if papertrail_enable_tcp else '@'}}{{ papertrail_destination }}
