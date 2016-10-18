@@ -17,6 +17,7 @@ Role Variables
 - `papertrail_enable_tcp`: Enable TCP connection. Default: False
 - `papertrail_enable_tls:`: Enable TLS. Only works with TCP. Default: True
 - `papertrail_loglevel`: loglevel. Default: \*.\*
+- `papertrail_hostname`: Hostname to send logs from. Default: System hostname
 
 Rsyslog Defaults
 ----------------
