@@ -3,6 +3,8 @@
 papertrail_loglevel: "*.*"
 papertrail_enable_tcp: False
 papertrail_enable_tls: True
+# Set hostname to use instead of machine hostname
+papertrail_hostname: False
 
 # Rsyslog Defaults 
 papertrail_EscapeControlCharactersOnReceive: 'on'
